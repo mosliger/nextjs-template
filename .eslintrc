@@ -1,0 +1,23 @@
+{
+  "extends": [ "standard", "standard-react"],
+  "plugins": [ "react-hooks" ],
+  "parser": "babel-eslint",
+  "globals": {
+    "describe": true,
+    "before": true,
+    "after": true,
+    "FormData": true,
+    "FileReader": true,
+    "it": true
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "object-curly-spacing": [ "error", "always" ],
+    "react/prop-types": "error",
+    "import/no-unresolved": "error",
+    "space-before-function-paren": "off",
+    "react/jsx-quotes": 0,
+    "jsx-quotes": [2, "prefer-double"],
+    "semi": ["error", "always"]
+  }
+}

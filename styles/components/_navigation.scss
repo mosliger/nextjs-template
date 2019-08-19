@@ -1,0 +1,33 @@
+header {
+  margin-bottom: 60px;
+}
+header > nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  background: #000;
+  > ul {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+  > ul > li > a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 6px 10px;
+    position: relative;
+    &.active:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      left: 0;
+      right: 0;
+      background: #fff;
+    }
+  }
+}
