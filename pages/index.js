@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Layout from '../layouts/main';
 
 const HomePage = () => (
   <div className="container">
@@ -11,4 +10,4 @@ const HomePage = () => (
   </div>
 );
 
-export default Layout()(HomePage);
+export default HomePage;

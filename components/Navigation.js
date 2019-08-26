@@ -4,7 +4,6 @@ import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 
 const Navigation = ({ router }) => {
-  console.log('props >>', router);
   const isActiveClass = (value) => {
     if (value === router.route) return 'active';
     return '';

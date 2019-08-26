@@ -1,8 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import Layout from '../layouts/main';
-
 const About = () => {
   return (
     <div className="container">
@@ -14,4 +12,4 @@ const About = () => {
   );
 };
 
-export default Layout()(About);
+export default About;
