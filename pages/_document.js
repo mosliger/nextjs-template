@@ -14,7 +14,20 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
         </Head>
         <body>
-          <Main />
+          <div id="wrapper-loading">
+            <div>
+              <span>L</span>
+              <span>O</span>
+              <span>A</span>
+              <span>D</span>
+              <span>I</span>
+              <span>N</span>
+              <span>G</span>
+            </div>
+          </div>
+          <div id="wrapper">
+            <Main />
+          </div>
           <NextScript />
         </body>
       </html>

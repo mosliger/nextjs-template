@@ -8,7 +8,12 @@ import Navigation from '../components/Navigation';
 import '../styles/index.scss';
 
 const handlePageLoading = (status = true) => {
-  console.log('isLoading', status);
+  const el = document.getElementById('wrapper-loading');
+  if (status) {
+    el.classList.add('active');
+  } else {
+    el.classList.remove('active');
+  }
 };
 
 Router.events.on('routeChangeStart', url => {
@@ -18,6 +23,7 @@ Router.events.on('routeChangeStart', url => {
 Router.events.on('routeChangeComplete', () => {
   handlePageLoading(false);
 });
+
 Router.events.on('routeChangeError', () => {
   handlePageLoading(false);
 });
@@ -26,9 +32,9 @@ export default class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
     let pageProps = {};
     // delay page change
-    // await new Promise(resolve => {
-    //   setTimeout(resolve, 1200);
-    // });
+    await new Promise(resolve => {
+      setTimeout(resolve, 2000);
+    });
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }

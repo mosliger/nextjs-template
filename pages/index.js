@@ -1,11 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { NextSeo } from 'next-seo';
 
 const HomePage = () => (
   <div className="container">
-    <Helmet>
-      <title>My Title</title>
-    </Helmet>
+    <NextSeo
+      title="Home page"
+      description="A short description goes here."
+    />
     <h1>Home Page</h1>
   </div>
 );

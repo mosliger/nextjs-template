@@ -8,6 +8,7 @@ header > nav {
   right: 0;
   display: block;
   background: #000;
+  z-index: 99;
   > ul {
     display: flex;
     align-items: center;

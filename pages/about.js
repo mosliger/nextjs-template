@@ -1,12 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { NextSeo } from 'next-seo';
 
 const About = () => {
   return (
     <div className="container">
-      <Helmet>
-        <title>About</title>
-      </Helmet>
+      <NextSeo
+        title="About"
+        description="A short description goes here."
+      />
       <h1>About Page</h1>
     </div>
   );
