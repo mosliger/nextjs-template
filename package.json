@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "styleguide": "styleguidist server"
   },
   "repository": {
     "type": "git",
@@ -36,14 +35,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
-    "@storybook/addon-actions": "^5.2.1",
-    "@storybook/addon-info": "^5.2.1",
-    "@storybook/addon-links": "^5.2.1",
-    "@storybook/addons": "^5.2.1",
-    "@storybook/react": "^5.2.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
     "eslint": "^6.2.0",
     "eslint-config-standard": "^13.0.1",
     "eslint-config-standard-react": "^8.0.0",
@@ -53,8 +48,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-standard": "^4.0.0",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
+    "react-styleguidist": "^9.1.16",
     "styled-jsx-plugin-sass": "^1.0.0",
     "webpack": "^4.40.2"
   }
