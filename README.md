@@ -11,7 +11,7 @@
   npm run build
 ```
 
-### start server
+### deploy
 
 ```
   npm run build
