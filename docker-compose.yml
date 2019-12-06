@@ -1,0 +1,7 @@
+version: '3'
+services:
+  nextjs-template:
+    image: registry.gitlab.com/chonlatee/nextjs-template
+    container_name: nextjs-template
+    ports:
+      - "3000:3000"

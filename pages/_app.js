@@ -29,17 +29,17 @@ Router.events.on('routeChangeError', () => {
 });
 
 export default class MyApp extends App {
-  static async getInitialProps ({ Component, router, ctx }) {
-    let pageProps = {};
-    // delay page change
-    await new Promise(resolve => {
-      setTimeout(resolve, 2000);
-    });
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-    return { pageProps };
-  }
+  // static async getInitialProps ({ Component, router, ctx }) {
+  //   let pageProps = {};
+  //   // delay page change
+  //   await new Promise(resolve => {
+  //     setTimeout(resolve, 2000);
+  //   });
+  //   if (Component.getInitialProps) {
+  //     pageProps = await Component.getInitialProps(ctx);
+  //   }
+  //   return { pageProps };
+  // }
 
   render () {
     const { Component, pageProps } = this.props;
