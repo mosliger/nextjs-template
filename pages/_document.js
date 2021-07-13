@@ -1,36 +1,24 @@
-import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-export default class MyDocument extends Document {
-  static async getInitialProps (ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
   }
 
-  render () {
+  render() {
     return (
-      <html>
+      <Html>
         <Head>
-          <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+          <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
         </Head>
         <body>
-          <div id="wrapper-loading">
-            <div>
-              <span>L</span>
-              <span>O</span>
-              <span>A</span>
-              <span>D</span>
-              <span>I</span>
-              <span>N</span>
-              <span>G</span>
-            </div>
-          </div>
-          <div id="wrapper">
-            <Main />
-          </div>
+          <Main />
           <NextScript />
         </body>
-      </html>
-    );
+      </Html>
+    )
   }
 }
+
+export default MyDocument

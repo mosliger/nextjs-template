@@ -1,27 +1,13 @@
-import React from 'react';
 import Link from 'next/link';
-import { withRouter } from 'next/router';
-import PropTypes from 'prop-types';
 
-const Navigation = ({ router }) => {
-  const isActiveClass = (value) => {
-    if (value === router.route) return 'active';
-    return '';
-  };
-
+const Navigation = (props) => {
   return (
     <header>
       <nav>
         <ul>
           <li>
-            <Link href="/">
-              <a className={isActiveClass('/')}>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about">
-              <a className={isActiveClass('/about')}>About</a>
-            </Link>
+            <Link href="/posts"> all posts</Link>
+            <Link href="/posts/2"> posts 2</Link>
           </li>
         </ul>
       </nav>
@@ -29,10 +15,4 @@ const Navigation = ({ router }) => {
   );
 };
 
-Navigation.propTypes = {
-  router: PropTypes.shape({
-    route: PropTypes.string
-  }).isRequired
-};
-
-export default withRouter(Navigation);
+export default Navigation;
