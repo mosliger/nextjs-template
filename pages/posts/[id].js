@@ -1,11 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Post2 = (props) => {
   const { id } = props;
   const [state, setState] = React.useState([]);
   return (
-    <div>
+    <div className="container">
       <h1>Post {id}</h1>
       <button
         onClick={() => {
@@ -31,10 +31,28 @@ const getData = () => {
   });
 };
 
-Post2.getInitialProps = async (req) => {
-  const { query } = req;
-  const json = await getData();
-  return { data: json, id: query.id };
+export const getStaticPaths = () => {
+  return {
+    paths: [],
+    fallback: true,
+  }
+}
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 };
+
+// Post2.getInitialProps = async (req) => {
+//   const { query, locale } = req;
+//   const json = await getData();
+//   return {
+//     data: json,
+//     id: query.id
+//   };
+// };
 
 export default Post2;

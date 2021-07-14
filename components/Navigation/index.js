@@ -1,16 +1,32 @@
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
 const Navigation = (props) => {
   const { asPath, locales, locale } = useRouter();
+  const { t } = useTranslation('common');
+  const menus = [
+    {
+      href: '/',
+      label: t('menus.home'),
+    },
+    {
+      href: '/posts',
+      label: t('menus.posts'),
+    },
+  ];
+
   return (
     <header>
       <nav>
         <ul>
-          <li>
-            <Link href="/posts"> all posts</Link>
-            <Link href="/posts/2"> posts 2</Link>
-          </li>
+          {menus.map((menu, index) => {
+            return (
+              <li key={index}>
+                <Link href={menu.href}>{menu.label}</Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
       <div className="switch-language">
@@ -22,6 +38,7 @@ const Navigation = (props) => {
             </Link>
           );
         })}
+       
       </div>
     </header>
   );
