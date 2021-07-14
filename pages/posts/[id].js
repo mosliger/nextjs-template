@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const Post2 = (props) => {
   const { id } = props;
   const [state, setState] = React.useState([]);
+  console.log('props >>', props);
   return (
     <div className="container">
       <h1>Post {id}</h1>
@@ -38,21 +39,17 @@ export const getStaticPaths = () => {
   }
 }
 
-export const getStaticProps = async ({ locale }) => {
+export const getStaticProps = async (props) => {
+  const { locale, params } = props
+  const translations = await serverSideTranslations(locale, ['common'])
+  const json = await getData();
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...params,
+      ...translations,
+      json
     },
   };
 };
-
-// Post2.getInitialProps = async (req) => {
-//   const { query, locale } = req;
-//   const json = await getData();
-//   return {
-//     data: json,
-//     id: query.id
-//   };
-// };
 
 export default Post2;
