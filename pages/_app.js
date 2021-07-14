@@ -1,10 +1,13 @@
 
+import { appWithTranslation } from 'next-i18next'
+
 import Navigation from '../components/Navigation';
 import Loading from '../components/Loading';
 
-import '../styles/index.scss'
+import '../styles/index.scss';
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = (props) => {
+  const { Component, pageProps } = props;
   return (
     <>
       <Navigation />
@@ -14,5 +17,4 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-export default MyApp;
-
+export default appWithTranslation(MyApp)

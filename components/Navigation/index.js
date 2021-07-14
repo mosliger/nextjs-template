@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Navigation = (props) => {
+  const { asPath, locales, locale } = useRouter();
   return (
     <header>
       <nav>
@@ -11,6 +13,16 @@ const Navigation = (props) => {
           </li>
         </ul>
       </nav>
+      <div className="switch-language">
+        {locales.map((value) => {
+          const isActive = locale === value;
+          return (
+            <Link key={value} href={asPath} locale={value}>
+              <button className={isActive ? 'active' : ''}>{value}</button>
+            </Link>
+          );
+        })}
+      </div>
     </header>
   );
 };
